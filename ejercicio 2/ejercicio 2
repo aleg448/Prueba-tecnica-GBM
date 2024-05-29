@@ -4,3 +4,29 @@
 #input scoring system 
 #Rest of the owl?
 #00 ends program
+
+#G P
+#g Q
+#S
+#K k
+#0 0
+#Calculate points
+    #position, system
+    #is position in range of the system?
+    #return points, otherwise 0
+
+#determine champions
+    #results, system
+    #pilots from race length
+    #list of list to capture points
+    #each position and pilot calls calculate_points
+    #return champions for each system
+
+
+#read and split input, end at 0 0
+    #loop until 0 0
+    #read G and P, split and map
+    #map races  
+    #read systems
+    #call determine_champion for each system
+    #return champions
