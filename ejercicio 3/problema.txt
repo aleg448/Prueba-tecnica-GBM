@@ -1,0 +1,3 @@
+Debemos calcular la cantidad minima de saltos necesarios para llegar desde 0 a un punto X
+Un salto permitido esta definido como a. (posicion actual + #saltos) b. (posicion actual - 1)
+Utilizando estos dos movimientos e inicializando la posicion actual en 0 debemos llegar a X
