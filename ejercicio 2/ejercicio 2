@@ -1,0 +1,6 @@
+#input G blankspace P
+#G is race number(1-100), P is pilots number, P can be empty
+#input race results 
+#input scoring system 
+#Rest of the owl?
+#00 ends program
