@@ -1,3 +1,4 @@
 #Clean dates
 # Input var customer_id, trans_date, tran_ammount
 #Classify "Low value""Medium value""High value"
+#Pareto principle, top 20% makes 80% of purchases, these are high value customers
