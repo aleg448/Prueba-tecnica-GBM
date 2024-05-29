@@ -1,8 +1,8 @@
-def es_palindromo():
-    P="".join(c.lower() for c in input("Ingresa texto a verificar:") if c.isalnum())
-    resultado="Es Palindromo" if P==P[::-1] else "No es Palindromo"
+def es_palindromo(texto):
+    P="".join(c.lower() for c in texto if c.isalnum())
+    resultado="Es palindromo" if P==P[::-1] else "No es palindromo"
     print(resultado)
-es_palindromo()
+    return resultado
 
 """
 input, clean text and whitespaces, join into single continuous string
