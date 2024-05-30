@@ -1,13 +1,37 @@
 #Clean dates
-# Input var customer_id, trans_date, tran_ammount
+#Input var customer_id, trans_date, tran_ammount
 #Classify "Low value""Medium value""High value"
 #Pareto principle, top 20% makes 80% of purchases, these are high value customers
 
-#load pandas to the rescue
+#load pandas to the rescue (sklearn 2)
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from keras.models import Sequential
+from keras.layers import Dense
+#load data
+data = pd.read_excel('Prueba-tecnica-GBM\ejercicio 4\data_customer_classification 1.xlsx')
+print(data.head())
 #normalize trans date
+data['trans_date'] = pd.to_datetime(data['trans_date'], format='%d-%b-%y')
+data['trans_date_norm'] = (data['trans_date'] - data['trans_date'].min()) / (data['trans_date'].max() - data['trans_date'].min())
+print(data[['trans_date', 'trans_date_norm']].head())
 #Calculate features
+#add useful features
+customer_data = data.groupby("customer_id").agg({"trans_date_norm": "mean", "tran_amount": ["mean", "max"]})
+customer_data.columns = ["avg_trans_date", "avg_amount", "max_amount"]
+customer_data = customer_data.reset_index()
+print(customer_data.head())
 #label data
+customer_data["category"] = pd.qcut(customer_data["avg_amount"], q=3, labels=[0, 1, 2])
+print(customer_data.head())
+#split feauteres and output target
+X = customer_data[["avg_trans_date", "avg_amount", "max_amount"]]
+y = customer_data["category"]
+print(X.head())
+print(y.head())
 #split in sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=420)
 #build model
 #train
 #evaluate loss and accuracy
