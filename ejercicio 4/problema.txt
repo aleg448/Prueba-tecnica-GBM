@@ -1,0 +1,2 @@
+Queremos entrenar un modelo simple que prediga si un cliente, en base a sus patrones de compra
+es de "Bajo" "Medio" u "Alto" valor para una tienda a la hora de hacer marketing personalizado.

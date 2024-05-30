@@ -1,0 +1,3 @@
+Loss: 0.0341
+Accuracy: 0.9956
+It runs!, It works!, but at what cost?
